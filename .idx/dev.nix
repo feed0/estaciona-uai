@@ -6,6 +6,7 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.zulu17
+    pkgs.postgresql
     pkgs.maven
   ];
   # Sets environment variables in the workspace
