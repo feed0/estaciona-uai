@@ -13,6 +13,7 @@ import com.chameleon.estaciona_uai.domain.parking.Parking;
 @Getter
 @Setter
 @AllArgsConstructor
+@Table(name = "parking_spaces")
 public class ParkingSpace {
     @Id
     @GeneratedValue

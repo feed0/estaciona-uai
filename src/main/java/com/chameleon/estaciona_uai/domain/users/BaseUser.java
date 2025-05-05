@@ -16,6 +16,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "users")
 public abstract class BaseUser {
 
     @Id

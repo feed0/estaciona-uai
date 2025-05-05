@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import com.chameleon.estaciona_uai.domain.parking.parking_space.ParkingSpace;
 @Getter
 @Setter
 @AllArgsConstructor
+@Table(name = "parkings")
 public class Parking {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

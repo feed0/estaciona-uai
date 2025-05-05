@@ -3,7 +3,6 @@ package com.chameleon.estaciona_uai.domain.users;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
