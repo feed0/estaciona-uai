@@ -30,7 +30,8 @@ public class Reservation {
     private ReservationStatus status;
 
     private LocalDateTime createdAt;
-    private LocalDateTime start;
-    private LocalDateTime end;
     private LocalDateTime updatedAt;
+
+    private LocalDateTime startAt;
+    private LocalDateTime endAt;
 }
