@@ -26,4 +26,6 @@ psql -h /tmp/postgres estaciona_uai
 ### Create user
 ```sql
 CREATE USER postgres WITH PASSWORD 'Password';
+GRANT ALL PRIVILEGES ON SCHEMA public TO postgres;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres;
 ```
