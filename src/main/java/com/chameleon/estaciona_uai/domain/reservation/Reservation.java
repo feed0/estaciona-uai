@@ -4,6 +4,7 @@ import com.chameleon.estaciona_uai.domain.parking.parking_space.ParkingSpace;
 import com.chameleon.estaciona_uai.domain.users.Customer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +15,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "reservations")
 public class Reservation {
     @Id
