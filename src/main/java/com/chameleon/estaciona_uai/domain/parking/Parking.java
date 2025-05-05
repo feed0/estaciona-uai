@@ -39,8 +39,8 @@ public class Parking {
     @OneToMany(cascade = CascadeType.ALL)
     private List<ParkingSpace> parkingSpaces;
     
-    private LocalTime open;
-    private LocalTime close;
+    private LocalTime openAt;
+    private LocalTime closeAt;
     
     private String address;
 
