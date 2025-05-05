@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.chameleon.estaciona_uai.domain.parking.parking_space.ParkingSpace;
+import com.chameleon.estaciona_uai.domain.users.Manager;
 
 @Entity
 @Getter
@@ -28,6 +30,9 @@ public class Parking {
     private UUID id;
 
     private String name;
+
+    @OneToOne
+    private Manager manager;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<ParkingSpace> parkingSpaces;
