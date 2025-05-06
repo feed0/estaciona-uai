@@ -14,6 +14,7 @@ mvn spring-boot:run
 ### Initialize and Run PostgreSQL
 ```sh
 initdb -D /tmp/postgres
+echo "unix_socket_directories = '/tmp/postgres'" >> /tmp/postgres/postgresql.conf
 pg_ctl -D /tmp/postgres start
 ```
 
