@@ -51,16 +51,16 @@
       enable = true;
       previews = {
         web = {
+            command = ["npm" "run" "dev" "--" "--port" "$PORT" "--hostname" "0.0.0.0"];
+            manager = "web";
+            cwd = "frontend";
+        };
+        web2 = {
           command = [
               "mvn"
               "spring-boot:run"
             ];
             manager = "web";
-        };
-        web2 = {
-            command = ["npm" "run" "dev" "--" "--port" "$PORT" "--hostname" "0.0.0.0"];
-            manager = "web";
-            cwd = "frontend";
         };
       };
     };
