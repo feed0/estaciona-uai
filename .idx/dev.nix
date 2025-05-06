@@ -27,5 +27,17 @@
         run-server = "PORT=3000 mvn spring-boot:run";
       };
     };
+    previews = {
+      enable = true;
+      previews = {
+        web = {
+          command = [
+              "mvn"
+              "spring-boot:run"
+            ];
+            manager = "web";
+        };
+      };
+    };
   };
 }
