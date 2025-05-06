@@ -8,6 +8,10 @@
     pkgs.zulu17
     pkgs.postgresql
     pkgs.maven
+    pkgs.nodejs_20
+    pkgs.yarn
+    pkgs.nodePackages.pnpm
+    pkgs.bun
   ];
   # Sets environment variables in the workspace
   env = {};
@@ -16,11 +20,27 @@
     extensions = [
       "vscjava.vscode-java-pack"
       "rangav.vscode-thunder-client"
+      "ckolkman.vscode-postgres"
+      "redhat.java"
+      "vscjava.vscode-gradle"
+      "vscjava.vscode-java-debug"
+      "vscjava.vscode-java-dependency"
+      "vscjava.vscode-java-test"
+      "vscjava.vscode-maven"
     ];
     workspace = {
       # Runs when a workspace is first created with this `dev.nix` file
       onCreate = {
         install = "mvn clean install";
+        npm-install = "npm ci --no-audit --prefer-offline --no-progress --timing";
+        # Open editors for the following files by default, if they exist:
+        default.openFiles = [
+          # Cover all the variations of language, src-dir, router (app/pages)
+          "pages/index.tsx" "pages/index.js"
+          "src/pages/index.tsx" "src/pages/index.js"
+          "app/page.tsx" "app/page.js"
+          "src/app/page.tsx" "src/app/page.js"
+        ];
       };
       # Runs when a workspace is (re)started
       onStart = {
@@ -38,14 +58,7 @@
             manager = "web";
         };
         web2 = {
-            command = [
-              "npm"
-              "run"
-              "dev"
-              "--"
-              "--port"
-              "$PORT"
-            ];
+            command = ["npm" "run" "dev" "--" "--port" "$PORT" "--hostname" "0.0.0.0"];
             manager = "web";
             cwd = "frontend";
         };
