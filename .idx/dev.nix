@@ -37,6 +37,18 @@
             ];
             manager = "web";
         };
+        web2 = {
+            command = [
+              "npm"
+              "run"
+              "dev"
+              "--"
+              "--port"
+              "$PORT"
+            ];
+            manager = "web";
+            cwd = "frontend";
+        };
       };
     };
   };
