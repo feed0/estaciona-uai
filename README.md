@@ -30,3 +30,10 @@ CREATE USER postgres WITH PASSWORD 'Password';
 GRANT ALL PRIVILEGES ON SCHEMA public TO postgres;
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres;
 ```
+
+## Spring Application
+
+### Run 
+```sh
+/nix/store/dkvhx83088f7d142jakxcfkkay23m31h-run-server
+```
