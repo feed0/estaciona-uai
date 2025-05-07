@@ -42,6 +42,9 @@ public class SignupService {
         parking.setAddress(signupRequest.getParkingAddress());
         parking.setManager(manager); // Set the manager for the parking
 
+        // Set the parking for the manager as well
+        manager.setParking(parking);
+
         // Save Manager and Parking
         managerRepository.save(manager);
         parkingRepository.save(parking);

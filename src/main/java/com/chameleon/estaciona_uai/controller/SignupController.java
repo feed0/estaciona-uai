@@ -20,6 +20,7 @@ public class SignupController {
 
     @PostMapping("/manager")
     public ResponseEntity<?> signupManager(@Valid @RequestBody ManagerSignupRequestDto signupRequest) {
+        System.out.println("/api/signup/manager");
         try {
             signupService.signupManager(signupRequest);
             return ResponseEntity.ok("Manager registered successfully");
